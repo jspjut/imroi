@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Image Region of Interest Selection</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="update_image()">
+    <p>Filename: <input onchange="update_image()" type="text" id="filename" /> </p>
+    <p>Top Left: <input onchange='update_image()' type="number" id='tl_x' value="620" />, <input onchange='update_image()' type="number" id='tl_y' value="250"/> </p>
+    <p>Zoom: <input onchange="update_image()" oninput="zoom.value = zoomOutputId.value" type="number" name="zoomOutput" id="zoomOutputId" value="3"/>
+        <input onchange="update_image()" oninput="zoomOutputId.value = zoom.value" type="range" id="zoom" value="3" min="1" max="10" step="1" /></p>
+
+    <img id='big image' class='img_big' src='test.jpg'>
+    <br />
+    <div style="display:grid;">
+        <div id="zoom image" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">No AA</div>
+        <div id="zoom image2" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">ATAA</div>
+        <div id="zoom image3" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">TAA</div>
+        <div id="zoom image4" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">SSAA 16X</div>
+    </div>
+
+    <pre id='debug output'></pre>
+</body>
+<script src="imroi.js"></script>
+</html>
+
