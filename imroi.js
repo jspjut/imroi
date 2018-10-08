@@ -1,3 +1,14 @@
+// set f2 (113) to toggle hidden state for controls
+document.body.onkeydown = function(e) {
+    if (e.keyCode == 113) {
+        if (document.getElementById('controls').style.display == 'block') {
+            document.getElementById('controls').style.display = 'none';
+        } else {
+            document.getElementById('controls').style.display = 'block';
+        }
+    }
+}
+
 function update_image() {
     var filename = document.getElementById('filename').value;
 
