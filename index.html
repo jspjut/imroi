@@ -8,6 +8,13 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <!-- Dependencies for ng-dom-to-pdf -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.38/pdfmake.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/ng-dom-to-pdf@1.0.2/dist/ng-dom-to-pdf.min.js"></script> -->
+
 </head>
 
 <body onload="update_image()">
@@ -18,7 +25,14 @@
 
     <img id='big image' class='img_big' src='test.jpg'>
     <br />
-    <div style="display:grid;">
+
+    <!-- ng-dom-to-pdf -->
+    <!-- <button pdf-download-button pdf-name="pdf-name.pdf" pdf-element-id="element-to-download" creating-pdf-class-name="generating" class="btn">Download As PDF</button>
+    <div style="display:grid;" pdf-content="element-to-download" class="container"> -->
+
+    <!-- Vanilla dom-to-image -->
+    <button class="btn" onclick="domtoimage.toPng(getElementById('output_figure'))">Download As Image</button>
+    <div style="display:grid;" id="output_figure">
         <div id="zoom image" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">No AA</div>
         <div id="zoom image2" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">ATAA</div>
         <div id="zoom image3" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">TAA</div>
