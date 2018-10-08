@@ -10,7 +10,7 @@ document.body.onkeydown = function(e) {
 }
 
 function update_image() {
-    var filename = document.getElementById('filename').value;
+    // var filename = document.getElementById('filename').value;
 
     // set zoom to given amount
     var zoom = document.getElementById('zoom').value;
@@ -38,6 +38,8 @@ function update_image() {
         zoom_img.style.gridColumn = (i % 2 + 1);
 
     }
+    // adjust figure width
+    document.getElementById('output_figure').style.width = naturalWidth + 'px';
 
     // debug
     document.getElementById('debug output').innerHTML += naturalHeight + ', ' + naturalWidth;

@@ -21,13 +21,13 @@
     <div id="controls">
         <p>Press F2 to toggle these controls on and off</p>
         <!-- <p>Filename: <input onchange="update_image()" type="text" id="filename" /> </p> -->
-        <p>Top Left: <input onchange='update_image()' type="number" id='tl_x' value="620" />, <input onchange='update_image()' type="number" id='tl_y' value="250"/> </p>
+        <p>Top Left: <input onchange='update_image()' type="number" id='tl_x' value="120" />, <input onchange='update_image()' type="number" id='tl_y' value="150"/> </p>
         <p>Zoom: <input onchange="update_image()" oninput="zoom.value = zoomOutputId.value" type="number" name="zoomOutput" id="zoomOutputId" value="3"/>
             <input onchange="update_image()" oninput="zoomOutputId.value = zoom.value" type="range" id="zoom" value="3" min="1" max="10" step="1" /></p>
         <pre id='debug output'></pre>
     </div>
 
-    <img id='big image' class='img_big' src='test.jpg'>
+    <img id='big image' class='img_big' src='http://hyrtwol.dk/img/test.jpg'>
     <!-- ng-dom-to-pdf -->
     <!-- <button pdf-download-button pdf-name="pdf-name.pdf" pdf-element-id="element-to-download" creating-pdf-class-name="generating" class="btn">Download As PDF</button>
     <div style="display:grid;" pdf-content="element-to-download" class="container"> -->
@@ -35,10 +35,10 @@
     <!-- Vanilla dom-to-image -->
     <!-- <button class="btn" onclick="domtoimage.toPng(getElementById('output_figure'))">Download As Image</button> -->
     <div style="display:grid;" id="output_figure">
-        <div id="zoom image" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">No AA</div>
-        <div id="zoom image2" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">ATAA</div>
-        <div id="zoom image3" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">TAA</div>
-        <div id="zoom image4" class="img_zoom" style="background-image: url('test.jpg'); background-size: 200%">SSAA 16X</div>
+        <div id="zoom image" class="img_zoom" style="background-image: url('http://hyrtwol.dk/img/test.jpg'); background-size: 200%">No AA</div>
+        <div id="zoom image2" class="img_zoom" style="background-image: url('http://hyrtwol.dk/img/test.jpg'); background-size: 200%">ATAA</div>
+        <div id="zoom image3" class="img_zoom" style="background-image: url('http://hyrtwol.dk/img/test.jpg'); background-size: 200%">TAA</div>
+        <div id="zoom image4" class="img_zoom" style="background-image: url('http://hyrtwol.dk/img/test.jpg'); background-size: 200%">SSAA 16X</div>
     </div>
 
 </body>
