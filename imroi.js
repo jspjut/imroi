@@ -31,7 +31,7 @@ function update_image() {
         var scale = 0.5;
         // set zoom, offset, width and height of the image
         zoom_img.style.backgroundSize = zoom * 100 / scale + '%';
-        zoom_img.style.backgroundPosition = 'left -' + tl_x * zoom * scale + 'px top -' + tl_y * zoom * scale + 'px';
+        zoom_img.style.backgroundPosition = 'left -' + tl_x * zoom + 'px top -' + tl_y * zoom + 'px';
         zoom_img.style.width = naturalWidth * scale + 'px';
         zoom_img.style.height = naturalHeight * scale + 'px';
         zoom_img.style.gridRow = Math.floor(i / 2) + 1 ;
@@ -44,3 +44,46 @@ function update_image() {
     // debug
     document.getElementById('debug output').innerHTML += naturalHeight + ', ' + naturalWidth;
 }
+
+
+// compensate of offset positions: from https://www.chestysoft.com/imagefile/javascript/get-coordinates.asp
+function FindPosition(oElement) {
+  if(typeof( oElement.offsetParent ) != "undefined")
+  {
+    for(var posX = 0, posY = 0; oElement; oElement = oElement.offsetParent)
+    {
+      posX += oElement.offsetLeft;
+      posY += oElement.offsetTop;
+    }
+      return [ posX, posY ];
+    }
+    else
+    {
+      return [ oElement.x, oElement.y ];
+    }
+}
+function click_image(e) {
+    var PosX = 0;
+    var PosY = 0;
+    var ImgPos;
+    ImgPos = FindPosition(document.getElementById('big image'));
+    if (!e) var e = window.event;
+    if (e.pageX || e.pageY)
+    {
+      PosX = e.pageX;
+      PosY = e.pageY;
+    }
+    else if (e.clientX || e.clientY)
+      {
+        PosX = e.clientX + document.body.scrollLeft
+          + document.documentElement.scrollLeft;
+        PosY = e.clientY + document.body.scrollTop
+          + document.documentElement.scrollTop;
+      }
+    PosX = PosX - ImgPos[0];
+    PosY = PosY - ImgPos[1];
+    document.getElementById('tl_x').value = PosX;
+    document.getElementById('tl_y').value = PosY;
+    update_image();
+}
+document.getElementById('big image').onmousedown = click_image;

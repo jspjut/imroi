@@ -2,7 +2,7 @@ A simple `html`/`css`/`js` tool for zooming in on a region of interest for a gro
 
 # TODO
 - [x] Hide controls with f2
-- [ ] Clickable main picture to choose top left
+- [x] Clickable main picture to choose top left
 - [ ] Method to save to pdf or png
 - [ ] Update layout for paper format
 - [ ] Add second layout option for slides (aspect ratio)
